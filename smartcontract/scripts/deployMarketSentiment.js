@@ -1,7 +1,4 @@
 const hre = require("hardhat");
-const hreEthscan = require("@nomiclabs/hardhat-etherscan");
-const dotenv = require("dotenv");
-dotenv.config();
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -15,7 +12,7 @@ async function main() {
   const MarketSentiment = await hre.ethers.getContractFactory(
     "MarketSentiment"
   );
-  const marketsentiment = await MarketSentiment.deploy("Hello, Hardhat!");
+  const marketsentiment = await MarketSentiment.deploy();
 
   await marketsentiment.deployed();
 
